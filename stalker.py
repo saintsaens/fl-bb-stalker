@@ -30,5 +30,5 @@ def stalk():
             if logger.is_in_log(thread_id, conf.LOG_FILE):
                 print (thread_id + " is in log.")
             else:
-                logger.write_in_log(thread_id)
+                logger.write_in_log(thread_id, conf.LOG_FILE)
                 print (thread_id + " written in log.")
