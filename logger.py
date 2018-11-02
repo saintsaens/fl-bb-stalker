@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import re
+import conf
 
 
 def write_in_log(text):
     # Open a file in write mode
-    log_file = open("korean_threads.txt", "a+")
+    log_file = open(conf.HTML_FILE, "a+")
     log_file.write(text)
     log_file.close()
 
