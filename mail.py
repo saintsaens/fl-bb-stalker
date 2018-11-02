@@ -16,9 +16,9 @@ def send_email(src_email, pwd, recipient, subject, body):
         server.login(src_email, pwd)
         server.sendmail(src_email, dst_email, message)
         server.close()
-        print 'successfully sent the mail'
+        print 'Mail sent!'
     except:
-        print "failed to send mail"
+        print "Failed."
 
 
 def create_subject(title):

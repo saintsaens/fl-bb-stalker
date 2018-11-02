@@ -23,13 +23,13 @@ def stalk():
 
         # Check if the thread title is in Korean (must be turned back to unicode).
         if is_hangul(title.decode('utf-8')):
-            print("Thread in Korean found: " + title)
-            print ("ID: " + thread_id)
+            print("New Korean thread found: " + title)
             if logger.is_in_log(thread_id, conf.LOG_FILE):
-                print (thread_id + " is in log.")
+                print "Thread already in log."
             else:
+                print "Adding thread to the log..."
                 logger.write_in_log(title, thread_id, link, conf.LOG_FILE)
-                print thread_id + ": writing in log..."
+                print "Thread added!"
                 print "Sending mail..."
                 mail_subject = mail.create_subject(title)
                 mail.send_email(conf_mail.SRC_EMAIL, conf_mail.SRC_PW, conf_mail.DST_EMAIL, mail_subject, link)
