@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import re
-import conf
 import csv
 
 
