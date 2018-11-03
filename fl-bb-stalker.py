@@ -11,7 +11,7 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--level', dest='level', default='info',
                         choices=['info', 'debug', 'error', 'warning', 'critical'])
     args = parser.parse_args()
-    logging.basicConfig(level=getattr(logging, args.level.upper()))
+    logging.basicConfig(format='%(message)s', level=getattr(logging, args.level.upper()))
 
 
 stalker.stalk()

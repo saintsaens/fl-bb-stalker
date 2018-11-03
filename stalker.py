@@ -6,31 +6,36 @@ import conf
 import logger
 import mail
 import conf_mail
+import logging
 
 
 def stalk():
     soup = BeautifulSoup(open(conf.HTML_FILE), 'html.parser')
 
     # Get all threads in their HTML form.
+    logging.debug("Getting all threads from HTML source...")
     for thread in soup.find_all(class_=conf.THREAD_CLASS):
 
         # Extract the title of the thread.
         title = get_thread_title(thread)
+        logging.debug("Thread title: " + title)
 
         # Get the link and ID of the thread.
         link = get_thread_link(thread)
+        logging.debug("Thread link: " + link)
         thread_id = get_thread_id(thread)
+        logging.debug("Thread ID: " + thread_id)
 
         # Check if the thread title is in Korean (must be turned back to unicode).
         if is_hangul(title.decode('utf-8')):
-            print("New Korean thread found: " + title)
+            logging.info("New Korean thread found: " + title)
             if logger.is_in_log(thread_id, conf.LOG_FILE):
-                print "Thread already in log."
+                logging.info("Thread already in log.")
             else:
-                print "Adding thread to the log..."
+                logging.info("Adding thread to the log...")
                 logger.write_in_log(title, thread_id, link, conf.LOG_FILE)
-                print "Thread added!"
-                print "Sending mail..."
+                logging.info("Thread added!")
+                logging.info("Sending mail...")
                 mail_subject = mail.create_subject(title)
                 mail.send_email(conf_mail.SRC_EMAIL, conf_mail.SRC_PW, conf_mail.DST_EMAIL, mail_subject, link)
 
