@@ -12,7 +12,8 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--level', dest='level', default='info',
                         choices=['info', 'debug', 'error', 'warning', 'critical'])
     args = parser.parse_args()
-    logging.basicConfig(filename=conf.JOURNAL, format='%(asctime)s - %(levelname)s - %(message)s', level=getattr(logging, args.level.upper()))
+    logging.basicConfig(filename=conf.JOURNAL, format='%(asctime)s - %(levelname)s - %(message)s',
+                        level=getattr(logging, args.level.upper()))
 
 
 stalker.stalk()
