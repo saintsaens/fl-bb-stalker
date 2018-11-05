@@ -10,7 +10,7 @@ Edit the file <b>conf_mail.py</b> and change the following values:
 
 You will need to [allow access to less secure apps](https://myaccount.google.com/lesssecureapps) on the SRC_EMAIL account, and also [disable CAPTCHA](https://accounts.google.com/b/0/DisplayUnlockCaptcha) on that account. I recommend creating a new account just for this purpose.
 ### Tests
-If you plan to run tests with `pytest`, create the file <b>fake_html.html</b> with at least the following lines (which is the first sticky thread of the WordPress.com help forum):
+If you plan to run tests with `pytest` ([how to do that?](https://docs.pytest.org/en/latest/getting-started.html)), create the file <b>fake_html.html</b> with at least the following lines (which is the first sticky thread of the WordPress.com help forum):
 ```
 <ul id="bbp-topic-3065850" class="odd super-sticky bbp-parent-forum-13 user-id-3167629 post-3065850 topic type-topic status-closed hentry">
 	<li class="bbp-topic-title">
