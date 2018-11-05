@@ -1,5 +1,5 @@
 # fl-bb-stalker
-Receive an email notification if there is a thread in Korean on the first page of the [WordPress.com forum](https://en.forums.wordpress.com/forum/support/).
+Receive an email notification if there is a thread in Korean on the first page of the [WordPress.com help forum](https://en.forums.wordpress.com/forum/support/).
 
 ## Prerequisites
 - Install BeautifulSoup (full doc [here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup))
@@ -31,7 +31,7 @@ If you plan to run tests with `pytest` ([how to do that?](https://docs.pytest.or
 </ul><!-- #bbp-topic-3065850 -->
 ```
 ## Usage
-Running `python fl-bb-stalker.py` will read the first page of the [WordPress.com forum](https://en.forums.wordpress.com/forum/support/). If a thread title contains at least one Korean character, it will send an email to DST_EMAIL (view the Setup section about Mails).
+Running `python fl-bb-stalker.py` will read the first page of the [WordPress.com help forum](https://en.forums.wordpress.com/forum/support/). If a thread title contains at least one Korean character, it will send an email to DST_EMAIL (view the Setup section about Mails).
 
 Each Korean thread sends one email. The email has the following form:
 - Subject
