@@ -11,6 +11,7 @@ def test_is_hangul():
     assert fl_bb_stalker.is_hangul(u'한') is True
     assert fl_bb_stalker.is_hangul(u'hello') is False
 
+
 def test_get_thread_title():
     soup = BeautifulSoup(open(conf.TEST_HTML_FILE), 'html.parser')
     thread = soup.find(class_=conf.THREAD_CLASS)
