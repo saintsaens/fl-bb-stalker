@@ -5,12 +5,12 @@ In its current state, running `python fl-bb-stalker.py` will look at the first p
 
 ## Setup
 ### Mails
-Edit the file `conf_mail.py` and change the following values:
+Edit the file <b>conf_mail.py</b> and change the following values:
 - SRC_EMAIL: full email address of the Gmail account used to send emails
 - SRC_PW: password of the SRC_EMAIL (must be written in clear, with double-quotes)
 - DST_EMAIL: full email address of the account receiving emails (not necessarily Gmail)
 ### Tests
-If you plan to run tests with `pytest`, create the `file fake_html.html` with at least the following lines (which is the first sticky thread of the WordPress.com help forum):
+If you plan to run tests with `pytest`, create the file <b>fake_html.html</b> with at least the following lines (which is the first sticky thread of the WordPress.com help forum):
 ```
 <ul id="bbp-topic-3065850" class="odd super-sticky bbp-parent-forum-13 user-id-3167629 post-3065850 topic type-topic status-closed hentry">
 	<li class="bbp-topic-title">
