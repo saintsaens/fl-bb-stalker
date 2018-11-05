@@ -13,7 +13,7 @@ import smtplib
 if __name__ == '__main__':
     levels = ['info', 'debug', 'error', 'warning', 'critical']
     parser = argparse.ArgumentParser()
-    parser.add_argument('-l', '--level', dest='level', default='info',
+    parser.add_argument('-l', '--level', dest='level', default='debug',
                         choices=['info', 'debug', 'error', 'warning', 'critical'])
     args = parser.parse_args()
     logging.basicConfig(filename=conf.JOURNAL, format='%(asctime)s - %(levelname)s - %(message)s',
