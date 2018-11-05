@@ -1,6 +1,11 @@
 # fl-bb-stalker
 A foreign alphabet bulletin board.
 
+## Prerequisites
+- Install BeautifulSoup (full doc [here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup))
+```
+$ apt-get install python-bs4
+```
 ## Setup
 ### Mails
 Edit the file <b>conf_mail.py</b> and change the following values:
