@@ -1,5 +1,5 @@
 # fl-bb-stalker
-Receive an email notification if there is a thread in Korean on the first page of the [WordPress.com help forum](https://en.forums.wordpress.com/forum/support/).
+<b>v0.1:</b> Receive an email notification if there is a thread in Korean on the first page of the [WordPress.com help forum](https://en.forums.wordpress.com/forum/support/).
 
 ## Prerequisites
 - Install BeautifulSoup (full doc [here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup))
