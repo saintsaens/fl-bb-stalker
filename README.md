@@ -8,7 +8,7 @@ Edit the file <b>conf_mail.py</b> and change the following values:
 - SRC_PW: password of the SRC_EMAIL (must be written in clear, with double-quotes)
 - DST_EMAIL: full email address of the account receiving emails (not necessarily Gmail)
 
-Note: you will need to allow access to less secure apps on the SRC_EMAIL account: https://myaccount.google.com/lesssecureapps.
+Note: you will need to [allow access to less secure apps](https://myaccount.google.com/lesssecureapps) on the SRC_EMAIL account, and also [disable CAPTCHA](https://accounts.google.com/b/0/DisplayUnlockCaptcha) on that account. I therefore recommend creating a new account just for this purpose.
 ### Tests
 If you plan to run tests with `pytest`, create the file <b>fake_html.html</b> with at least the following lines (which is the first sticky thread of the WordPress.com help forum):
 ```
