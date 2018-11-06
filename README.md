@@ -9,11 +9,11 @@ $ apt-get install python-bs4
 ## Setup
 ### General
 Edit the file <b>conf.py</b> and change the following values:
-- EXISTING_KOREAN_THREADS: full path to the csv file storing Korean threads (if the file doesn't exist, it will be created). For instance:
+- EXISTING_KOREAN_THREADS: full path to the csv file storing Korean threads (if the file doesn't exist, it will be created). For instance (replace `USER` with your account name):
 ```
 EXISTING_KOREAN_THREADS = "/home/USER/fl-bb-stalker/korean_threads.csv"
 ```
-- LOGFILE = full path to the log file for the script. For instance:
+- LOGFILE = full path to the log file for the script. For instance (replace `USER` with your account name):
 ```
 LOGFILE = "/home/USER/fl-bb-stalker/fl-bb-stalker.log"
 ```
@@ -26,7 +26,7 @@ Edit the file <b>conf_mail.py</b> and change the following values:
 You will need to [allow access to less secure apps](https://myaccount.google.com/lesssecureapps) on the SRC_EMAIL account, and also [disable CAPTCHA](https://accounts.google.com/b/0/DisplayUnlockCaptcha) on that account. I recommend creating a new account just for this purpose.
 ### Tests
 If you plan to run tests with `pytest` ([how to do that?](https://docs.pytest.org/en/latest/getting-started.html)), change the following value in the file <b>conf.py</b>:
-- TEST_HTML_FILE: full path to the html file used for tests. For instance:
+- TEST_HTML_FILE: full path to the html file used for tests. For instance (replace `USER` with your account name):
 ```
 TEST_HTML_FILE = "/home/USER/fl-bb-stalker/fake_html.html"
 ```
@@ -71,7 +71,7 @@ Run:
 ```
 $ crontab -e
 ```
-Then add the following line:
+Then add the following line (replace `PATH/TO/fl-bb-stalker` with the full path to where the directory is on your machine):
 ```
 */10 * * * * /usr/bin/python /PATH/TO/fl-bb-stalker/fl_bb_stalker.py
 ```
