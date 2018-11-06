@@ -16,7 +16,7 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--level', dest='level', default='debug',
                         choices=['info', 'debug', 'error', 'warning', 'critical'])
     args = parser.parse_args()
-    logging.basicConfig(filename=conf.JOURNAL, format='%(asctime)s - %(levelname)s - %(message)s',
+    logging.basicConfig(filename=conf.LOGFILE, format='%(asctime)s - %(levelname)s - %(message)s',
                         level=getattr(logging, args.level.upper()))
 
 
@@ -60,11 +60,11 @@ def stalk():
             thread_id = get_thread_id(thread)
             logging.debug("Thread ID: " + thread_id)
 
-            if is_in_log(thread_id, conf.LOG_FILE):
+            if is_in_log(thread_id, conf.EXISTING_KOREAN_THREADS):
                 logging.debug("Thread already in log.")
             else:
                 logging.debug("Adding thread to the log...")
-                write_in_log(title, thread_id, link, conf.LOG_FILE)
+                write_in_log(title, thread_id, link, conf.EXISTING_KOREAN_THREADS)
                 logging.debug("Thread added to the log.")
                 logging.debug("Sending mail...")
                 mail_subject = create_subject(title)

@@ -8,10 +8,10 @@ THREAD_CLASS = "topic"  # type: str
 TITLE_CLASS = "bbp-topic-permalink"  # type: str
 
 # Path to the csv file listing all thread titles using Korean characters.
-LOG_FILE = "./korean_threads.csv"
+EXISTING_KOREAN_THREADS = "/FULL/PATH/HERE"
 
 # Path to a local HTML file for tests.
-TEST_HTML_FILE = "./fake_html.html"
+TEST_HTML_FILE = "/FULL/PATH/HERE"
 
 # Path to the log file.
-JOURNAL = "./journal.log"
+LOGFILE = "/FULL/PATH/HERE"
