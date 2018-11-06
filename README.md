@@ -4,7 +4,7 @@
 ## Prerequisites
 - Install BeautifulSoup (full doc [here](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#installing-beautiful-soup))
 ```
-$ apt-get install python-bs4
+$ sudo apt-get install python-bs4
 ```
 ## Setup
 ### General
@@ -15,7 +15,7 @@ EXISTING_KOREAN_THREADS = "/home/USER/fl-bb-stalker/korean_threads.csv"
 ```
 - LOGFILE = full path to the log file for the script. For instance (replace `USER` with your account name):
 ```
-LOGFILE = "/home/USER/fl-bb-stalker/fl-bb-stalker.log"
+LOGFILE = "/home/USER/fl-bb-stalker/fl_bb_stalker.log"
 ```
 ### Mails
 Edit the file <b>conf_mail.py</b> and change the following values:
