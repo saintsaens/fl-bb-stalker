@@ -7,6 +7,16 @@
 $ apt-get install python-bs4
 ```
 ## Setup
+### General
+Edit the file <b>conf.py</b> and change the following values:
+- EXISTING_KOREAN_THREADS: full path to the csv file storing Korean threads (if the file doesn't exist, it will be created). For instance:
+```
+EXISTING_KOREAN_THREADS = "/home/USER/fl-bb-stalker/korean_threads.csv"
+```
+- LOGFILE = full path to the log file for the script. For instance:
+```
+LOGFILE = "/home/USER/fl-bb-stalker/fl-bb-stalker.log"
+```
 ### Mails
 Edit the file <b>conf_mail.py</b> and change the following values:
 - SRC_EMAIL: full email address of the Gmail account used to send emails
@@ -15,7 +25,12 @@ Edit the file <b>conf_mail.py</b> and change the following values:
 
 You will need to [allow access to less secure apps](https://myaccount.google.com/lesssecureapps) on the SRC_EMAIL account, and also [disable CAPTCHA](https://accounts.google.com/b/0/DisplayUnlockCaptcha) on that account. I recommend creating a new account just for this purpose.
 ### Tests
-If you plan to run tests with `pytest` ([how to do that?](https://docs.pytest.org/en/latest/getting-started.html)), create the file <b>fake_html.html</b> with at least the following lines (which is the first sticky thread of the WordPress.com help forum):
+If you plan to run tests with `pytest` ([how to do that?](https://docs.pytest.org/en/latest/getting-started.html)), change the following value in the file <b>conf.py</b>:
+- TEST_HTML_FILE: full path to the html file used for tests. For instance:
+```
+TEST_HTML_FILE = "/home/USER/fl-bb-stalker/fake_html.html"
+```
+You must create the test HTML file, and add the following lines (which is the first sticky thread of the WordPress.com help forum):
 ```
 <ul id="bbp-topic-3065850" class="odd super-sticky bbp-parent-forum-13 user-id-3167629 post-3065850 topic type-topic status-closed hentry">
 	<li class="bbp-topic-title">
@@ -30,6 +45,7 @@ If you plan to run tests with `pytest` ([how to do that?](https://docs.pytest.or
 	</li>
 </ul><!-- #bbp-topic-3065850 -->
 ```
+
 ## Usage
 ```
 $ python fl-bb-stalker.py
@@ -47,3 +63,15 @@ New Korean thread: <Title>
 ```
 
 A log is kept on all new Korean threads, so you will only receive one mail per thread (new threads with the same title as an existing thread still send an email, since the ID is checked).
+
+## Cron
+You may use a [cron job](https://help.ubuntu.com/community/CronHowto) to run the fl-bb-stalker script in the background at regular intervals. Given the frequency of new topics in the WordPress.com help forum, I recommend running it every 10 minutes.
+
+Run:
+```
+$ crontab -e
+```
+Then add the following line:
+```
+*/10 * * * * /usr/bin/python /PATH/TO/fl-bb-stalker/fl_bb_stalker.py
+```
