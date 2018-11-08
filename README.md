@@ -6,6 +6,10 @@
 ```
 $ sudo apt-get install python-bs4
 ```
+- Install the HTML parser library `lxml`
+```
+$ sudo pip install lxml
+```
 ## Setup
 ### General
 Edit the file <b>conf.py</b> and change the following values:
